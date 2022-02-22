@@ -1,0 +1,20 @@
+<h1>Edit Friend</h1>
+<br>
+<%= form_for(@friend) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <br>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
+  <br>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <br>
+  <%= f.submit %>
+<% end %>
