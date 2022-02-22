@@ -1,6 +1,7 @@
-<h1>All Friends</h1>
-<ul>
+<h1>There are <%= Friend.count %> Friends Available Now</h1>
+<ol>
   <% @friends.each do |friend| %>
-  <li> <%= friend.name %><li>
+  <li> <%= link_to friend.name, friend_path(friend) %></li>
   <% end %>
-</ul>
+</ol>
+<%= link_to "Back to homepage", root_path %>
