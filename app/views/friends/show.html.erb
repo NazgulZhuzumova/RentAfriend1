@@ -1,0 +1,12 @@
+<h1><%= @friend.name %></h1>
+
+<ul>
+  <li><%= @friend.gender %></li>
+  <li>lives around: <%= @friend.location %></li>
+  <li>is interested in: <%= @friend.interest %></li>
+  <li><%= @friend.name %> is <%= @friend.age %> years old.</li>
+</ul>
+
+<h2>£<%= @friend.price %></h2>
+
+<%= link_to "back to index", friends_path %>
