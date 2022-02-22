@@ -1,4 +1,7 @@
 <h1>There are <%= Friend.count %> Friends Available Now</h1>
+
+<%= link_to "Make a new friend!", new_friend_path %>
+
 <ol>
   <% @friends.each do |friend| %>
   <li> <%= link_to friend.name, friend_path(friend) %></li>
