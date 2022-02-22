@@ -8,5 +8,5 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/ }
   validates :bio, presence: true
   has_many :bookings
-  has_many :friends
+  has_many :friends, dependent: :destroy
 end
