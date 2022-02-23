@@ -1,24 +1,17 @@
-<h1> Make a new friend! </h1>
+<h1 class="p-5 text-center"> Make a new friend! </h1>
 
 <%= simple_form_for(@friend) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :age %>
-  <%= f.text_field :age %>
-  <br>
-  <%= f.label :gender %>
-  <%= f.text_field :gender %>
-  <br>
-  <%= f.label :interest %>
-  <%= f.text_field :interest %>
-  <br>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <br>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <br>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :name %>
+
+  <%= f.input :age %>
+
+  <%= f.input :gender %>
+  
+  <%= f.input :interest %>
+  
+  <%= f.input :location %>
+
+  <%= f.input :price %>
+  
   <%= f.submit %>
   <% end %>
