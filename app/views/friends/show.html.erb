@@ -1,19 +1,24 @@
-<h1 class="text-center p-5"><%= @friend.name %> | <%= @friend.age %> years old</h1>
+<div class="container">
+<h1 class="text-center p-5"><%= @friend.name %></h1>
 
-<div class="d-flex justify-content-around">
-    <% if @friend.photo.attached? %>
-      <%= cl_image_tag @friend.photo.key,
-        width: 400, height: 300, crop: :fill %>
-    <% end %>
-<ul>
-  <li class="list-group-item list-group-item-warning"><%= @friend.gender %></li>
-  <li class="list-group-item list-group-item-warning">lives around: <%= @friend.location %></li>
-  <li class="list-group-item list-group-item-warning">is interested in: <%= @friend.interest %></li>
-</ul>
+  <div class="d-flex justify-content-around">
+    <div>
+      <% if @friend.photo.attached? %>
+        <%= cl_image_tag @friend.photo.key,
+          width: 400, height: 300, crop: :fill %>
+      <% end %>
+    </div>
+    <div>
+    <p><%= @friend.age %> | <%= @friend.gender %> | Location: <%= @friend.location %> | Interest: <%= @friend.interest %></p>
+    <p>bio: lorem ipsum</p>
+    </div>
+  </div>
 </div>
 
-<h2 class="list-group-item list-group-item-warning mt-5 text-center">Price per afternoon: £<%= @friend.price %></h2>
+<h2 class="list-group-item list-group-item-warning mt-5 text-center">Price for the afternoon: £<%= @friend.price %></h2>
 <h2 class="list-group-item list-group-item-warning text-center">Here is a lovely form that you will fill in and submit!</h2>
 
 
-<p class="list-group-item list-group-item-warning d-flex justify-content-center"><%= link_to "back to index", friends_path %></p>
+
+<%= link_to "back to index", friends_path %></p>
+</div>
