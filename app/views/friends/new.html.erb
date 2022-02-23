@@ -12,6 +12,10 @@
   <%= f.input :location %>
 
   <%= f.input :price %>
+
+  <%= f.input :photo, as: :file %>
   
   <%= f.submit %>
   <% end %>
+
+  <%= link_to "Go back", friends_path %>
