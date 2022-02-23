@@ -23,7 +23,7 @@ naz.save!
 hannah = User.new(email: "hannah@gmail.com", password: "123456", bio: "bio", name: "Hannah")
 hannah.save!
 
-10.times do
+5.times do
   friend = Friend.new(name: Faker::Name.name, age: rand(18..110), location: Faker::Address.city, gender: Faker::Gender.type, interest: Faker::Verb.ing_form, price: rand(0..10000))
   friend.user = User.first
   file = URI.open('https://clasebcn.com/wp-content/uploads/2020/04/harold-thumb.jpg')
@@ -31,7 +31,7 @@ hannah.save!
   friend.save!
 end
 
-10.times do
+5.times do
   friend = Friend.new(name: Faker::Name.name, age: rand(18..110), location: Faker::Address.city, gender: Faker::Gender.type, interest: Faker::Verb.ing_form, price: rand(0..10000))
   friend.user = User.second
   file = URI.open('https://i.guim.co.uk/img/media/3aab8a0699616ac94346c05f667b40844e46322f/0_123_5616_3432/master/5616.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=cdfeb9fcf58f8dd0d5dcb70ec4fb6673')
@@ -39,7 +39,7 @@ end
   friend.save!
 end
 
-10.times do
+5.times do
   friend = Friend.new(name: Faker::Name.name, age: rand(18..110), location: Faker::Address.city, gender: Faker::Gender.type, interest: Faker::Verb.ing_form, price: rand(0..10000))
   friend.user = User.third
   file = URI.open('https://www.ladbible.com/cdn-cgi/image/width=720,quality=70,format=jpeg,fit=pad,dpr=1/https%3A%2F%2Fs3-images.ladbible.com%2Fs3%2Fcontent%2F733ff9e65fdbed5b62b45728a7a76145.png')
@@ -47,10 +47,34 @@ end
   friend.save!
 end
 
-10.times do
+5.times do
   friend = Friend.new(name: Faker::Name.name, age: rand(18..110), location: Faker::Address.city, gender: Faker::Gender.type, interest: Faker::Verb.ing_form, price: rand(0..10000))
   friend.user = User.fourth
   file = URI.open('https://hungarytoday.hu/wp-content/uploads/2020/06/Hide-the-Pain-Harold-prof..jpg')
+  friend.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  friend.save!
+end
+
+5.times do
+  friend = Friend.new(name: Faker::Name.name, age: rand(18..110), location: Faker::Address.city, gender: Faker::Gender.type, interest: Faker::Verb.ing_form, price: rand(0..10000))
+  friend.user = User.fourth
+  file = URI.open('https://hungarytoday.hu/wp-content/uploads/2021/04/hide-the-pain-harold.jpg')
+  friend.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  friend.save!
+end
+
+5.times do
+  friend = Friend.new(name: Faker::Name.name, age: rand(18..110), location: Faker::Address.city, gender: Faker::Gender.type, interest: Faker::Verb.ing_form, price: rand(0..10000))
+  friend.user = User.fourth
+  file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCp5fcPD_1QAAB-hLmflKQK74cncEoNu8-GQ&usqp=CAU')
+  friend.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  friend.save!
+end
+
+5.times do
+  friend = Friend.new(name: Faker::Name.name, age: rand(18..110), location: Faker::Address.city, gender: Faker::Gender.type, interest: Faker::Verb.ing_form, price: rand(0..10000))
+  friend.user = User.fourth
+  file = URI.open('https://www.hidethepainharold.com/assets/references/thumb/01.jpg')
   friend.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   friend.save!
 end

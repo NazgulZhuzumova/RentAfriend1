@@ -2,9 +2,17 @@
 
 <%= link_to "Make a new friend!", new_friend_path %>
 
-<ol>
+  <div class="index-cards">
   <% @friends.each do |friend| %>
-  <li> <%= link_to friend.name, friend_path(friend) %></li>
+    <div class="friend-card">
+      <%= cl_image_tag friend.photo.key,
+        width: 400, height: 300, crop: :fill %>
+      <div class="container">
+        <h4> <%= link_to friend.name, friend_path(friend) %></h4>
+        <p>Age: <%= friend.age %></p>
+      </div>
+    </div>
   <% end %>
-</ol>
+    </div>
+
 <%= link_to "Back to homepage", root_path %>

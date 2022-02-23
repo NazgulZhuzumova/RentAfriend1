@@ -19,7 +19,7 @@ class FriendsController < ApplicationController
   end
 
   def index
-    @friends = Friend.all
+    @friends = Friend.all.shuffle
   end
 
   private
