@@ -7,31 +7,42 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <% if user_signed_in?%>
-           <li class="nav-item active">
-            <%=link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"%>
-          <% else %>
-            <%=link_to "Sign in", new_user_session_path, class: "nav-link"%>
-          <% end %>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/2978876?u=d018188079ab8ae8dc4bdac60ca40dea4cccbb0f&v=4" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-      </ul>
-    </div>
+    <% if user_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <p class="nav-link"><%= current_user.email %></p>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link"<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Messages</a>
+            </li>
+            <li class="nav-item dropdown">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/2978876?u=d018188079ab8ae8dc4bdac60ca40dea4cccbb0f&v=4" />
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Notifications</a>
+                <a class="dropdown-item" href="#">Settings</a>
+              </div>
+            </li>
+            <!--li class="nav-item"-->
+            <!--/li-->
+        </ul>
+      </div>
+    <% else %>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/users/sign_in">Want to make some friends? <strong>Sign in</strong></a>
+            </li>
+            <!--li class="nav-item"-->
+            <!--/li-->
+        </ul>
+      </div>
+    <% end %>
   </div>
 </div>
