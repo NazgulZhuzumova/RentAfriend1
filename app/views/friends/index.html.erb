@@ -1,14 +1,16 @@
-<h1>There are <%= Friend.count %> Friends Available Now</h1>
+<h1 class="text-center pt-5">There are <%= Friend.count %> Friends Available Now</h1>
 
-<%= link_to "Make a new friend!", new_friend_path %>
+<h2 class="list-group-item list-group-item-warning text-center p-3 m-5"><%= link_to "Make a new friend!", new_friend_path %></h2>
 
   <div class="index-cards">
   <% @friends.each do |friend| %>
     <div class="friend-card">
+    <% if friend.photo.attached? %>
       <%= cl_image_tag friend.photo.key,
         width: 400, height: 300, crop: :fill %>
+    <% end %>
       <div class="container">
-        <h4> <%= link_to friend.name, friend_path(friend) %></h4>
+        <h4> <%=link_to friend.name, friend_path(friend) %></h4>
         <p>Age: <%= friend.age %></p>
       </div>
     </div>
