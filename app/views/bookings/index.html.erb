@@ -1,48 +1,50 @@
 <div class="container">
-<h1 class="text-center pt-5"> Friends I have requested </h1>
+  <h1 class="text-center pt-5"> Friends I have requested </h1>
 
-<div class="index-cards">
-  <% @user.bookings.each do |booking| %>
-    <%= link_to friend_path(booking.friend.id) do %>
-      <div class="friend-card">
-        <%= cl_image_tag booking.friend.photo.key,
-        width: 600, height: 300, crop: :fill %>
-        <div class="friend-info">
-          <p>Name: <%= booking.friend.name %></p>
-          <p>Age: <%= booking.friend.age %></p>
-          <p>Location: <%= booking.location %></p>
-          <p>Date of Booking: <%= booking.start_date %> - <%= booking.end_date %></p>
-          <%= booking.approved %>
-          <% if booking.approved %>
-            <p>Booking has been accepted</p>
-          <% elsif booking.approved.nil? %>
-            <p>Booking is pending</p>
-          <% else %>
-            <p>Booking has been rejected</p>
-          <% end %>
+  <div class="index-cards">
+    <% @user.bookings.each do |booking| %>
+      <%= link_to friend_path(booking.friend.id) do %>
+        <div class="friend-card">
+          <%= cl_image_tag booking.friend.photo.key,
+          width: 600, height: 300, crop: :fill %>
+          <div class="friend-info">
+            <p>Name: <%= booking.friend.name %></p>
+            <p>Age: <%= booking.friend.age %></p>
+            <p>Location: <%= booking.location %></p>
+            <p>Date of Booking: <%= booking.start_date %> - <%= booking.end_date %></p>
+            <%= booking.approved %>
+            <% if booking.approved %>
+              <p>Booking has been accepted</p>
+            <% elsif booking.approved.nil? %>
+              <p>Booking is pending</p>
+            <% else %>
+              <p>Booking has been rejected</p>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<h1 class="text-center pt-5"> Requests to book my friends </h1>
-<div class="index-cards">
-  <% @friends_bookings.each do |booking| %>
-    <%= link_to friend_path(booking.friend.id) do %>
-      <div class="friend-card">
-        <%= cl_image_tag booking.friend.photo.key,
-        width: 600, height: 300, crop: :fill %>
-        <div class="friend-info">
-          <p> Name: <%= booking.friend.name %> </p>
-          <p>Age: <%= booking.friend.age %></p>
-          <p> Requested by: <%= booking.user.name %> </p>
-          <p> Location: <%= booking.location %> </p>
-          <p> Date of Booking: <%= booking.start_date %> - <%= booking.end_date %></p>
+  <h1 class="text-center pt-5"> Requests to book my friends </h1>
+  <div class="index-cards">
+    <% @friends_bookings.each do |booking| %>
+      <%= link_to friend_path(booking.friend.id) do %>
+        <div class="friend-card">
+          <%= cl_image_tag booking.friend.photo.key,
+          width: 600, height: 300, crop: :fill %>
+          <div class="friend-info">
+            <p> Name: <%= booking.friend.name %> </p>
+            <p>Age: <%= booking.friend.age %></p>
+            <p> Requested by: <%= booking.user.name %> </p>
+            <p> Location: <%= booking.location %> </p>
+            <p> Date of Booking: <%= booking.start_date %> - <%= booking.end_date %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <%= link_to "back to index", friends_path, class: "btn btn-gradient"%></p>
 </div>
 <%# Add edit button to change status
 Need to show the user who is trying making the booking %>
