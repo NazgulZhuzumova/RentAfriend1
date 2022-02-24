@@ -25,7 +25,7 @@ class FriendsController < ApplicationController
   private
 
   def friend_params
-    params.require(:friend).permit(:name, :age, :location, :gender, :price, :photo)
+    params.require(:friend).permit(:name, :age, :location, :gender, :price, :photo, :bio)
   end
   def edit
     @friend = Friend.find(params[:id])
