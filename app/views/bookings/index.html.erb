@@ -1,0 +1,25 @@
+<h1>All bookings</h1>
+<p><% @bookings.each do |booking| %></p>
+<div>
+  <%= cl_image_tag booking.friend.photo.key,
+          width: 400, height: 300, crop: :fill %>
+  <%= booking.friend.name %>
+  <%= booking.location %>
+  <%= booking.start_date %> - <%= booking.end_date %>
+  <%= booking.approved %>
+  <% if booking.approved %>
+  <p> Booking has been accepted </p>
+  <% elsif booking.approved.nil? %>
+  <p> Booking is pending </p>
+  <% else %>
+  <p> Booking has been rejected </p>
+  <% end %>
+</div>
+
+<h1>Display bookings of all friends</h1>
+
+
+
+
+Add edit button to change status
+Need to show the user who is trying making the booking
