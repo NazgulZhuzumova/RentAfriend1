@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/friends">
+    <a class="navbar-brand" href="/">
    <%= image_tag "logo.png" %>
   </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,10 +17,10 @@
               <a class="nav-link"<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/friends/new">List a friend</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Messages</a>
+              <a class="nav-link" href="/bookings">My Bookings</a>
             </li>
             <li class="nav-item dropdown">
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/2978876?u=d018188079ab8ae8dc4bdac60ca40dea4cccbb0f&v=4" />
