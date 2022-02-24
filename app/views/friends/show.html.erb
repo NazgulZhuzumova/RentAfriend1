@@ -1,36 +1,39 @@
-
+<br>
+<br>
 <div class="container">
-<h1 class="text-center p-5"><%= @friend.name %></h1>
-
-  <div class="d-flex justify-content-around">
+  <div class="d-flex justify-content-between align-items-center">
     <div>
       <% if @friend.photo.attached? %>
         <%= cl_image_tag @friend.photo.key,
-          width: 400, height: 300, crop: :fill %>
+          width: 600, height: 400, crop: :fill %>
       <% end %>
     </div>
-    <div>
-    <p><%= @friend.age %> | <%= @friend.gender %> | Location: <%= @friend.location %> | Interest: <%= @friend.interest %></p>
-    <p>bio: lorem ipsum</p>
+    <div class="grid">
+      <h1 class="text-center p-3"><%= @friend.name %>, <%= @friend.age %></h1>
+      <h3 class="text-center p-3"> Listed by: <%= @friend.user.name %></h3>
+    <div class="text-center">
+      <h2><%= @friend.gender %> <br><%= @friend.location %></h2>
+    </div>
     </div>
   </div>
-<p><%= @friend.bio %></p>
-
-<h2 class="list-group-item list-group-item-warning mt-5 text-center">Price for the afternoon: £<%= @friend.price %></h2>
-
-<%= simple_form_for [@friend, @booking] do |f| %>
-  <%= f.input :start_date%>
-
-  <%= f.input :end_date %>
-
-  <%= f.input :location %>
-  
-  <%= f.submit %>
-  <% end %>
-
-  <%= link_to "Go back", friends_path %>
+  <hr>
+  <div class="d-flex justify-content-between">
+    <div class="w-50">
+      <p>Hi everyone! This is my friend <%= @friend.name %>! <%= @friend.name %> is a really fun person, and loves <%= @friend.interest %>. <%= @friend.name %> would love to get to know you and hang out sometime!</p>
+      <p><%= @friend.bio %></p>
+        <hr>
+    </div>
+    <div>
+      <%= simple_form_for [@friend, @booking] do |f| %>
+      <%= f.input :start_date%>
+      <%= f.input :end_date %>
+      <%= f.input :location %>
+      <%= f.submit "Request this friend!", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+<%= link_to "back to index", friends_path, class: "btn btn-gradient"%></p>
 </div>
-
-<%= link_to "back to index", friends_path %></p>
 </div>
 </div>
