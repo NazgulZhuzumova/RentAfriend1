@@ -16,6 +16,7 @@ class FriendsController < ApplicationController
 
   def show
     @friend = Friend.find(params[:id])
+    @booking = Booking.new
   end
 
   def index
@@ -24,8 +25,8 @@ class FriendsController < ApplicationController
 
   private
 
-  def friend_params
-    params.require(:friend).permit(:name, :age, :location, :gender, :price, :photo, :bio)
+  def friend_param
+    params.require(:friend).permit(:name, :age, :location, :interest, :gender, :price, :photo, :bio)
   end
   def edit
     @friend = Friend.find(params[:id])
