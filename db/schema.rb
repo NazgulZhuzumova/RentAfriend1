@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_120023) do
     t.date "start_date"
     t.date "end_date"
     t.string "location"
-    t.boolean "approved", default: false
+    t.boolean "approved"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["friend_id"], name: "index_bookings_on_friend_id"
