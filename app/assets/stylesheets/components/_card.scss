@@ -15,8 +15,15 @@
 
   .friend-card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 4px 4px 8px 4px rgba(231, 129, 13, 0.3);
     transition: 0.3s;
+    box-sizing: border-box;
+    border-radius: 5px;
+    img{
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      width: 100%;
+    }
   }
 
 
@@ -25,14 +32,14 @@
     display: grid;
     justify-content: space-between;
     padding: 2px 16px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 36px;
   }
 
 .friends_index_cards {
   background-size: cover;
   background-position: center;
-  height: 350px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,4 +69,8 @@
 .index-cards a:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   color: black;
+}
+
+.h3 {
+  font-family: Arial, Helvetica, sans-serif;
 }

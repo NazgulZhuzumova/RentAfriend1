@@ -1,5 +1,5 @@
 <div class="container">
-<h1 class="text-center pt-5">There are <%= Friend.count %> Friends Available Now</h1>
+<h3 class="text-center pt-5 ">There are <%= Friend.count %> Friends Available Now</h3>
 
 <div class="index-cards">
   <% @friends.each do |friend| %>
@@ -7,7 +7,7 @@
     <div class="friend-card">
     <% if friend.photo.attached? %>
       <%= cl_image_tag friend.photo.key,
-        width: 600, height: 300, crop: :fill %>
+        width: 400, height: 150, crop: :fill %>
     <% end %>
       <div class="friend-info">
         <h4> <%= friend.name %></h4>
