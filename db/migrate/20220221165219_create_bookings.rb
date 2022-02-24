@@ -6,7 +6,7 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.date :start_date
       t.date :end_date
       t.string :location
-      t.boolean :approved
+      t.boolean :approved, default: false
 
       t.timestamps
     end
