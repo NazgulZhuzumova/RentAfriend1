@@ -1,4 +1,11 @@
 class BookingsController < ApplicationController
+  def index
+    @user = current_user
+    @friends_bookings = Booking.all.select do |booking|
+      booking.friend.user == current_user
+    end
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user

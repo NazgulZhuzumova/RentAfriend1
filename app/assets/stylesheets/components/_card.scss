@@ -26,6 +26,10 @@
     }
   }
 
+.friend-card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
   /* Add some padding inside the card container */
   .index-cards {
@@ -49,10 +53,11 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  transition: 0.5s transform ease-in-out;
 }
 
 .card-category:hover {
+  color: #ff914d;
+  transition: 0.5s transform ease-in-out;
   transform: scale(1.03);
 }
 
@@ -67,7 +72,7 @@
 }
 
 .index-cards a:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   color: black;
 }
 
