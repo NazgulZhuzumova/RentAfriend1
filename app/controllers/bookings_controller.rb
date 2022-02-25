@@ -1,10 +1,20 @@
 class BookingsController < ApplicationController
+  ID = []
   def index
     @user = current_user
     @friends_bookings = Booking.all.select do |booking|
       booking.friend.user == current_user
     end
+    @accepted_bookings = current_user.bookings.select do |booking|
+      booking.approved == true
+    end
+
+    @pending_bookings = current_user.bookings.select do |booking|
+      booking.approved == false
+    end
   end
+
+
 
   def create
     @booking = Booking.new(booking_params)
@@ -15,6 +25,16 @@ class BookingsController < ApplicationController
     else
       render "friends/index"
     end
+  end
+
+  def update
+    @booking_request = Booking.find(params[:id])
+    @booking_request.approved = true
+    @booking_request.save
+    @friends_bookings = Booking.all.select do |booking|
+      booking.friend.user == current_user && booking.approved = false
+    end
+    redirect_to bookings_path
   end
 
   private

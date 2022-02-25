@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :friends do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:index, :destroy, :update]
+  resources :bookings, only: [:index, :destroy, :update, :show]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
