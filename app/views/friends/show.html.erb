@@ -5,7 +5,7 @@
     <div>
       <% if @friend.photo.attached? %>
         <%= cl_image_tag @friend.photo.key,
-          width: 600, height: 400, crop: :fill %>
+          width: 600, height: 400, crop: :fill,  gravity: :face %>
       <% end %>
     </div>
     <div class="grid">
