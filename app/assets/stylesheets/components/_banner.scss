@@ -10,15 +10,20 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 64px;
+  font-size: 44px;
   font-weight: bold;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .banner h2 {
-  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
   color: white;
   opacity: 0.9;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+}
+.container h2 {
+  font-family: 'Times New Roman', Times, serif;
 }

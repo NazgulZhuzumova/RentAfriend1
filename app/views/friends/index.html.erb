@@ -11,9 +11,11 @@
     <% end %>
       <div class="friend-info">
         <h4> <%= friend.name %></h4>
+
         <p>Age: <%= friend.age %></p>
         <p>Interest: <%= friend.interest %></p>
         <p>Price: £<%= friend.price %> per session</p>
+
       </div>
     </div>
     <% end %>
@@ -21,5 +23,5 @@
 </div>
 
 
-<%= link_to "Back to homepage", root_path %>
+<%= link_to "back to home", root_path, class: "btn btn-gradient m-3"%></p>
 </div>
