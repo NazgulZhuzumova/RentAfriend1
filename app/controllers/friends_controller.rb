@@ -25,7 +25,7 @@ class FriendsController < ApplicationController
 
   private
 
-  def friend_param
+  def friend_params
     params.require(:friend).permit(:name, :age, :location, :interest, :gender, :price, :photo, :bio)
   end
   def edit
