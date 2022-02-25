@@ -1,16 +1,13 @@
 class BookingsController < ApplicationController
-  ID = []
   def index
-    @user = current_user
     @friends_bookings = Booking.all.select do |booking|
       booking.friend.user == current_user
     end
     @accepted_bookings = current_user.bookings.select do |booking|
       booking.approved == true
     end
-
     @pending_bookings = current_user.bookings.select do |booking|
-      booking.approved == false
+      booking.approved.nil?
     end
   end
 
