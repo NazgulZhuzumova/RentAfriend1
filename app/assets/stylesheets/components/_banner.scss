@@ -1,7 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 200px 0;
   height: 100vh;
   padding-bottom: 50px;
 }
@@ -9,16 +9,14 @@
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 44px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 60px;
   font-weight: bold;
   padding-bottom: 20px;
-  font-family: 'Times New Roman', Times, serif;
 }
 
 .banner h2 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 30px;
+  font-size: 40px;
   color: white;
   opacity: 0.9;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
