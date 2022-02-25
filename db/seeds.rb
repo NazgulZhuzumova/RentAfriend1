@@ -46,7 +46,7 @@ puts "Creating Friends..."
 20.times do
   friend = Friend.new(name: Faker::Name.name, age: rand(18..55), bio: Faker::Lorem.paragraph, location: Faker::Address.city, gender: 'male', interest: Faker::Verb.ing_form, price: rand(0..100))
   friend.user = User.first
-  file = URI.open(avatars_male.shuffle.join())
+  file = URI.open(avatars_male.sample)
   friend.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   friend.save!
 end
@@ -57,7 +57,7 @@ puts 'first seed done'
 15.times do
   friend = Friend.new(name: Faker::Name.name, age: rand(18..55), bio: Faker::Lorem.paragraph, location: Faker::Address.city, gender: 'female', interest: Faker::Verb.ing_form, price: rand(0..100))
   friend.user = User.first
-  file = URI.open(avatars_female.shuffle.join())
+  file = URI.open(avatars_female.sample)
   friend.photo.attach(io: file, filename: 'profile.png', content_type: 'image/png')
   friend.save!
 end
