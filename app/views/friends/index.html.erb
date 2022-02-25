@@ -7,12 +7,15 @@
     <div class="friend-card">
     <% if friend.photo.attached? %>
       <%= cl_image_tag friend.photo.key,
-        width: 400, height: 150, crop: :fill %>
+        width: 400, height: 150, crop: :fill, gravity: :face %>
     <% end %>
       <div class="friend-info">
         <h4> <%= friend.name %></h4>
-        <p class="mb-0">Age: <%= friend.age %></p>
-        <p class="mb-0">Interest: <%= friend.interest %></p>
+
+        <p>Age: <%= friend.age %></p>
+        <p>Interest: <%= friend.interest %></p>
+        <p>Price: £<%= friend.price %> per session</p>
+
       </div>
     </div>
     <% end %>
