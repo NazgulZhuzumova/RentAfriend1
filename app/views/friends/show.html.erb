@@ -25,12 +25,13 @@
     </div>
     <div class="booking-card booking-cards">
       <%= simple_form_for [@friend, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_date , as: :string, required: false, input_html: {class: "datepicker"} %>
-
+      <div class="form-start-date-start-date">
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date , as: :string, required: false, input_html: {class: "datepicker"} %>
+     </div>
 
       <%= f.input :location %>
-      <%= f.submit "Request this friend!", class: "btn btn-flat" %>
+      <%= f.submit "Request this friend!", class: "button-form" %>
       <% end %>
     </div>
   </div>

@@ -86,15 +86,22 @@
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  
+  display: grid;
+  justify-content: space-between;
+  padding: 2px 16px;
 }
 
   /* Add some padding inside the card container */
-  .booking-cards {
-    display: grid;
-    justify-content: space-between;
-    padding: 2px 16px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 36px;
+  // .booking-cards {
+  //  display: grid;
+  //   justify-content: space-between;
+  //   padding: 2px 16px;
+  //   grid-template-columns: 1fr 1fr 1fr;
+  //   grid-gap: 36px;
     
-  }
+  //}
+  .form-start-date-start-date {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+}
